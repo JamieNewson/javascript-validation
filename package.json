@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
     "html-webpack-plugin": "^5.6.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",

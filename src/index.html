@@ -3,7 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template Document</title>
+    <title>Javascript Validation</title>
   </head>
-  <body></body>
+  <body>
+    <form action="" novalidate>
+      <ul>
+        <section class="title"><h1>Input Form</h1></section>
+        <li class="form-row">
+          <label for="email">Email Address:</label
+          ><input
+            id="email"
+            type="email"
+            minlength="6"
+            maxlength="50"
+            required
+          />
+        </li>
+        <li class="form-row">
+          <label for="country">Country:</label
+          ><input
+            id="country"
+            type="text"
+            minlength="4"
+            maxlength="30"
+            required
+          />
+        </li>
+        <li class="form-row">
+          <label for="postcode">Postal Code:</label
+          ><input id="postcode" type="text" minlength="6" maxlength="8" />
+        </li>
+        <li class="form-row">
+          <label for="password">Password:</label
+          ><input
+            id="password"
+            type="password"
+            minlength="8"
+            maxlength="100"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            required
+          />
+        </li>
+        <li class="form-row">
+          <label for="password-confirm">Confirm Password:</label
+          ><input
+            id="password-confirm"
+            type="password"
+            minlength="8"
+            maxlength="100"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])"
+            required
+          />
+        </li>
+        <section class="btns">
+          <button class="reset" type="reset">Reset</button>
+          <button class="submit" type="submit">Submit</button>
+        </section>
+      </ul>
+    </form>
+  </body>
 </html>
