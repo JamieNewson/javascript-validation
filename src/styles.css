@@ -59,7 +59,7 @@ input {
   border-radius: 20px;
   box-sizing: border-box;
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   transition: 0.2s;
 }
 
@@ -67,6 +67,10 @@ input {
   outline: solid 1px rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: bold;
+}
+
+.btns button:active {
+  font-size: 0.8rem;
 }
 
 .submit {

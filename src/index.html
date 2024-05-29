@@ -6,7 +6,7 @@
     <title>Javascript Validation</title>
   </head>
   <body>
-    <form action="" novalidate>
+    <form class="input-form" action="" novalidate>
       <ul>
         <section class="title"><h1>Input Form</h1></section>
         <li class="form-row">
@@ -19,6 +19,7 @@
             required
           />
         </li>
+        <p id="email-error"></p>
         <li class="form-row">
           <label for="country">Country:</label
           ><input
@@ -29,10 +30,18 @@
             required
           />
         </li>
+        <p id="country-error"></p>
         <li class="form-row">
           <label for="postcode">Postal Code:</label
-          ><input id="postcode" type="text" minlength="6" maxlength="8" />
+          ><input
+            id="postcode"
+            type="text"
+            minlength="6"
+            maxlength="8"
+            required
+          />
         </li>
+        <p id="postcode-error"></p>
         <li class="form-row">
           <label for="password">Password:</label
           ><input
@@ -44,10 +53,11 @@
             required
           />
         </li>
+        <p id="password-error"></p>
         <li class="form-row">
-          <label for="password-confirm">Confirm Password:</label
+          <label for="password-match">Confirm Password:</label
           ><input
-            id="password-confirm"
+            id="password-match"
             type="password"
             minlength="8"
             maxlength="100"
@@ -55,6 +65,7 @@
             required
           />
         </li>
+        <p id="password-match-error"></p>
         <section class="btns">
           <button class="reset" type="reset">Reset</button>
           <button class="submit" type="submit">Submit</button>
