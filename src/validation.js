@@ -40,7 +40,6 @@ class TextInput {
     this.errorDisplay = document.querySelector(`#${errorDisplayID}`);
 
     this.element.addEventListener("focusout", () => this.validateInput());
-    this.element.addEventListener("focusin", () => this.resetError());
   }
 
   validateInput() {
@@ -48,12 +47,14 @@ class TextInput {
       this.displayError();
       return false;
     } else {
-      this.errorDisplay.innerText = "";
+      this.resetError();
       return true;
     }
   }
 
   displayError() {
+    this.element.className = "input-error";
+    this.errorDisplay.className = "error active";
     if (this.element.validity.typeMismatch)
       this.errorDisplay.innerText = `Value entered must be a${
         this.type.match("^[aieouAIEOU].*") ? "n" : ""
@@ -67,7 +68,8 @@ class TextInput {
   }
 
   resetError() {
-    this.errorDisplay.innerText = "";
+    this.errorDisplay.className = "error";
+    this.element.className = "";
   }
 }
 
@@ -92,16 +94,18 @@ class MatchInput extends TextInput {
   }
 
   validateInput() {
-    if (this.element.value !== this.matchElement.value) {
+    if (this.element.value !== this.matchElement.value || !this.element.value) {
       this.displayError();
       return false;
     } else {
-      this.errorDisplay.innerText = "";
+      this.resetError();
       return true;
     }
   }
 
   displayError() {
+    this.element.className = "input-error";
+    this.errorDisplay.className = "error active";
     this.errorDisplay.innerText = `Passwords do not match!`;
   }
 }
